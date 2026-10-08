@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="藍豆咖啡 (Blue Bean Coffee) - 為喜歡喝咖啡的人提供簡單、清新、舒服的精品咖啡豆、現作咖啡飲品與真實評價。">
+  <title>藍豆咖啡 BLUE BEAN COFFEE ｜ 簡單・清新・舒服的咖啡時光</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e40af;
+      --primary-dark: #1e3a8a;
+      --primary-light: #3b82f6;
+      --sky: #0ea5e9;
+      --sky-light: #e0f2fe;
+      --sky-soft: #f0f9ff;
+      --white: #ffffff;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-900: #0f172a;
+      --amber: #f59e0b;
+      --radius: 12px;
+      --radius-sm: 6px;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 12px 28px -4px rgba(30, 64, 175, 0.12);
+      --transition: all 0.25s ease;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--white);
+      color: var(--slate-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      transition: var(--transition);
+    }
+
+    img, svg {
+      vertical-align: middle;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* Header & Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 72px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--slate-200);
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      box-shadow: 0 2px 8px rgba(30, 64, 175, 0.25);
+    }
+
+    .brand-text h1 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+    }
+
+    .brand-text span {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--sky);
+      font-weight: 600;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--slate-700);
+      position: relative;
+      padding: 6px 2px;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--sky);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .btn-nav-cta {
+      background: var(--primary);
+      color: var(--white);
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 6px rgba(30, 64, 175, 0.2);
+    }
+
+    .btn-nav-cta:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(30, 64, 175, 0.3);
+    }
+
+    .mobile-toggle {
+      display: none;
+      width: 36px;
+      height: 36px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .mobile-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--slate-700);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* Common Components */
+    .section-padding {
+      padding: 85px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 52px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--sky);
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+      background: var(--sky-soft);
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      font-size: 15px;
+      color: var(--slate-600);
+      line-height: 1.7;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: linear-gradient(175deg, #f0f9ff 0%, #ffffff 75%);
+      overflow: hidden;
+      padding: 60px 0 85px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -100px;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+      background: var(--sky-light);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: clamp(32px, 4.2vw, 46px);
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--slate-900);
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-title .text-primary {
+      color: var(--primary);
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: var(--slate-600);
+      line-height: 1.8;
+      margin-bottom: 34px;
+      max-width: 540px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+      padding: 14px 30px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(30, 64, 175, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(30, 64, 175, 0.35);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--slate-700);
+      border: 1px solid var(--slate-200);
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary-light);
+      color: var(--primary);
+      background: var(--sky-soft);
+    }
+
+    .hero-card {
+      position: relative;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius);
+      padding: 36px 30px;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+    }
+
+    .badge-float {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .hero-illustration {
+      width: 140px;
+      height: 140px;
+      margin: 10px auto 20px;
+      animation: float 4s ease-in-out infinite;
+      filter: drop-shadow(0 10px 18px rgba(30, 64, 175, 0.15));
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .hero-item-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+
+    .hero-item-sub {
+      font-size: 13px;
+      color: var(--slate-600);
+      margin-bottom: 24px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      border-top: 1px solid var(--slate-100);
+      padding-top: 20px;
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: var(--slate-600);
+      margin-top: 2px;
+    }
+
+    /* Brand Philosophy Section */
+    .brand-section {
+      background: var(--white);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius);
+      padding: 32px 26px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--sky);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .feature-icon-box {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      background: var(--sky-soft);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      transition: var(--transition);
+    }
+
+    .feature-card:hover .feature-icon-box {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .feature-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: 12px;
+    }
+
+    .feature-desc {
+      font-size: 14px;
+      color: var(--slate-600);
+      line-height: 1.7;
+    }
+
+    /* Beans Section */
+    .beans-section {
+      background: var(--slate-50);
+    }
+
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 38px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: 24px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--slate-600);
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+    }
+
+    .filter-btn:hover {
+      border-color: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .filter-btn.active {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+      box-shadow: 0 2px 8px rgba(30, 64, 175, 0.25);
+    }
+
+    .beans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 28px;
+    }
+
+    .bean-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+    }
+
+    .bean-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-color: #cbd5e1;
+    }
+
+    .bean-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .roast-badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 12px;
+    }
+
+    .roast-light {
+      background: var(--sky-light);
+      color: #0369a1;
+    }
+
+    .roast-medium {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .roast-dark {
+      background: #e2e8f0;
+      color: var(--slate-700);
+    }
+
+    .bean-rating {
+      font-size: 12px;
+      color: var(--slate-600);
+      font-weight: 500;
+    }
+
+    .bean-rating span {
+      color: var(--amber);
+      font-weight: 700;
+    }
+
+    .bean-name {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: 6px;
+    }
+
+    .bean-origin {
+      font-size: 13px;
+      color: var(--sky);
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .bean-notes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .note-pill {
+      font-size: 12px;
+      background: var(--slate-100);
+      color: var(--slate-600);
+      padding: 3px 9px;
+      border-radius: 4px;
+    }
+
+    .bean-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid var(--slate-100);
+    }
+
+    .bean-price {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .bean-spec {
+      font-size: 11px;
+      color: var(--slate-600);
+      font-weight: normal;
+      margin-left: 2px;
+    }
+
+    .btn-buy {
+      background: var(--sky-soft);
+      color: var(--primary);
+      border: 1px solid #bfdbfe;
+      padding: 7px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .btn-buy:hover {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+
+    /* Drinks Section */
+    .drinks-section {
+      background: var(--white);
+    }
+
+    .drinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 26px;
+    }
+
+    .drink-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+    }
+
+    .drink-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--sky);
+    }
+
+    .drink-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .drink-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--sky-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+
+    .drink-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+
+    .drink-price {
+      margin-left: auto;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .drink-desc {
+      font-size: 14px;
+      color: var(--slate-600);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .drink-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .drink-tag {
+      font-size: 11px;
+      color: #0284c7;
+      background: #f0f9ff;
+      border: 1px solid #e0f2fe;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    /* Reviews Section */
+    .reviews-section {
+      background: var(--slate-50);
+    }
+
+    .reviews-dashboard {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius);
+      padding: 34px;
+      margin-bottom: 40px;
+      display: grid;
+      grid-template-columns: 240px 1fr 200px;
+      gap: 32px;
+      align-items: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .overall-rating {
+      text-align: center;
+      border-right: 1px solid var(--slate-200);
+      padding-right: 20px;
+    }
+
+    .score-big {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1;
+    }
+
+    .stars-amber {
+      color: var(--amber);
+      font-size: 20px;
+      margin: 8px 0;
+      letter-spacing: 2px;
+    }
+
+    .rating-meta {
+      font-size: 12px;
+      color: var(--slate-600);
+    }
+
+    .bars-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--slate-600);
+    }
+
+    .bar-label {
+      width: 32px;
+    }
+
+    .bar-track {
+      flex: 1;
+      height: 8px;
+      background: var(--slate-100);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: var(--amber);
+      border-radius: 4px;
+    }
+
+    .bar-percent {
+      width: 36px;
+      text-align: right;
+      font-weight: 600;
+    }
+
+    .review-action {
+      text-align: center;
+    }
+
+    .btn-write-review {
+      background: var(--primary);
+      color: var(--white);
+      padding: 12px 22px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2);
+    }
+
+    .btn-write-review:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .reviews-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    .review-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+    }
+
+    .review-card:hover {
+      box-shadow: var(--shadow);
+    }
+
+    .review-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .reviewer-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .reviewer-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--sky-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .reviewer-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--slate-900);
+    }
+
+    .review-product-tag {
+      font-size: 11px;
+      color: var(--slate-600);
+      background: var(--slate-100);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-top: 2px;
+    }
+
+    .review-stars {
+      color: var(--amber);
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .review-comment {
+      font-size: 14px;
+      color: var(--slate-700);
+      line-height: 1.7;
+      margin-bottom: 16px;
+      font-style: italic;
+      flex-grow: 1;
+    }
+
+    .review-meta-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--slate-100);
+      padding-top: 12px;
+      font-size: 12px;
+      color: var(--slate-600);
+    }
+
+    .btn-helpful {
+      border: 1px solid var(--slate-200);
+      padding: 4px 10px;
+      border-radius: 14px;
+      font-size: 12px;
+      color: var(--slate-600);
+    }
+
+    .btn-helpful:hover {
+      border-color: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .btn-helpful.active {
+      background: var(--sky-light);
+      border-color: var(--primary-light);
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Contact & Store Section */
+    .contact-section {
+      background: var(--white);
+    }
+
+    .contact-card {
+      background: var(--sky-soft);
+      border: 1px solid #bfdbfe;
+      border-radius: var(--radius);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .contact-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 18px;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--slate-700);
+    }
+
+    .contact-icon {
+      color: var(--primary);
+      margin-top: 3px;
+    }
+
+    .hours-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: 10px;
+      padding: 26px;
+    }
+
+    .hours-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: var(--slate-600);
+      padding: 8px 0;
+      border-bottom: 1px dashed var(--slate-200);
+    }
+
+    .hours-row:last-child {
+      border-bottom: none;
+    }
+
+    .hours-note {
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--sky);
+      font-weight: 500;
+    }
+
+    .btn-nav-store {
+      margin-top: 18px;
+      width: 100%;
+      background: var(--primary);
+      color: var(--white);
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-nav-store:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--slate-900);
+      color: #94a3b8;
+      padding: 60px 0 30px;
+      font-size: 14px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 36px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand h2 {
+      color: var(--white);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .footer-brand p {
+      color: #64748b;
+      font-size: 13px;
+      line-height: 1.7;
+      margin-top: 10px;
+      max-width: 280px;
+    }
+
+    .footer-col h3 {
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #1e293b;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #64748b;
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: var(--white);
+      border-radius: var(--radius);
+      width: min(520px, 100%);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      animation: modalFadeIn 0.25s ease-out;
+    }
+
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .modal-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--slate-100);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+
+    .modal-close {
+      font-size: 24px;
+      color: var(--slate-600);
+      line-height: 1;
+    }
+
+    .modal-close:hover {
+      color: var(--slate-900);
+    }
+
+    .modal-body {
+      padding: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-700);
+      margin-bottom: 6px;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      color: var(--slate-900);
+      background: var(--white);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    .star-picker {
+      display: flex;
+      gap: 8px;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    .star-item {
+      color: var(--slate-200);
+      transition: color 0.15s ease;
+    }
+
+    .star-item.active {
+      color: var(--amber);
+    }
+
+    .modal-footer {
+      padding: 16px 24px;
+      background: var(--slate-50);
+      border-top: 1px solid var(--slate-100);
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 1000;
+      background: var(--slate-900);
+      color: var(--white);
+      padding: 14px 22px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      .reviews-dashboard {
+        grid-template-columns: 1fr;
+        padding: 24px;
+      }
+      .overall-rating {
+        border-right: none;
+        border-bottom: 1px solid var(--slate-200);
+        padding-bottom: 20px;
+        padding-right: 0;
+      }
+      .contact-card {
+        grid-template-columns: 1fr;
+        padding: 28px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: 24px;
+        gap: 18px;
+        border-bottom: 1px solid var(--slate-200);
+        display: none;
+      }
+      .nav-menu.open {
+        display: flex;
+      }
+      .btn-nav-cta {
+        display: none;
+      }
+      .mobile-toggle {
+        display: flex;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+      .section-padding {
+        padding: 60px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部導覽列 -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#top" class="brand">
+        <div class="brand-logo" aria-hidden="true">
+          <!-- 咖啡豆向量 SVG 圖示 -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a9 9 0 0 0-9 9c0 5 4 9 9 9s9-4 9-9a9 9 0 0 0-9-9z"/>
+            <path d="M12 2c2 3 2 8-2 11s-2 5 2 7"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>藍豆咖啡</h1>
+          <span>BLUE BEAN COFFEE</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#brand" class="nav-link">品牌理念</a></li>
+        <li><a href="#beans" class="nav-link">精選咖啡豆</a></li>
+        <li><a href="#drinks" class="nav-link">現作飲品</a></li>
+        <li><a href="#reviews" class="nav-link">顧客評價</a></li>
+        <li><a href="#contact" class="nav-link">門市資訊</a></li>
+      </ul>
+
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="#beans" class="btn-nav-cta">
+          <span>探索選豆</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="切換導覽選單">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 1. 首屏視覺區 (Hero) -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <div class="hero-tag">
+            <span>✦ 簡單・清新・舒服的咖啡提案</span>
+          </div>
+          <h2 class="hero-title">一杯純粹好咖啡，<br>讓日常隨<span class="text-primary">藍豆</span>放晴。</h2>
+          <p class="hero-desc">藍豆咖啡專注為喜愛喝咖啡的你，嚴選當季新鮮莊園咖啡豆與現萃飲品。沒有複雜的繁瑣，只有純淨、明亮且充滿層次的舒服風味。</p>
+          <div class="hero-actions">
+            <a href="#beans" class="btn-primary">
+              <span>選購咖啡豆</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#drinks" class="btn-secondary">
+              <span>看飲品菜單</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-card">
+            <div class="badge-float">本季主打・限定烘焙</div>
+            <!-- 大尺寸咖啡豆 SVG 向量插畫 -->
+            <svg class="hero-illustration" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="50" cy="50" rx="36" ry="44" fill="#3b82f6"/>
+              <ellipse cx="50" cy="50" rx="34" ry="42" fill="#1e40af"/>
+              <path d="M50 8C54 26 40 42 50 62C56 74 54 86 50 92" stroke="#60a5fa" stroke-width="5" stroke-linecap="round"/>
+              <ellipse cx="38" cy="28" rx="8" ry="14" fill="#93c5fd" opacity="0.35" transform="rotate(-15 38 28)"/>
+            </svg>
+            <h3 class="hero-item-title">藍豆手選特級豆</h3>
+            <p class="hero-item-sub">衣索比亞 耶加雪菲 G1 日曬慢烘</p>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">精品莊園豆</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">92°C</div>
+                <div class="stat-label">金杯萃取標準</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">4.9 ★</div>
+                <div class="stat-label">咖啡人真實好評</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 品牌理念區 (Brand Philosophy) -->
+    <section class="section-padding brand-section" id="brand">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">BRAND PHILOSOPHY</span>
+          <h2 class="section-title">簡單・清新・舒服</h2>
+          <p class="section-subtitle">我們相信，品飲咖啡是一場放鬆自我的日常儀式。藍豆咖啡以乾淨純粹的藍白基調，帶你拋開雜音，找回喝咖啡最原本的快樂。</p>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="feature-title">簡單透明產區</h3>
+            <p class="feature-desc">清楚標註產地、莊園處理法與杯測風味筆記，誠實呈現風土，不添加任何人工香精，純淨透澈。</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            </div>
+            <h3 class="feature-title">清新平衡烘焙</h3>
+            <p class="feature-desc">依生豆含水率微調火候與風門，保留清爽花果甜香與明亮果酸，口感柔滑順口，天天品飲不負擔。</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <h3 class="feature-title">舒服自在分享</h3>
+            <p class="feature-desc">無論店內點一杯手沖放空，或在家自煮磨豆，皆能享有安心親切的體驗與沖煮建議，讓好咖啡融入日常。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 精選咖啡豆區 (Beans Section) [功能一：介紹咖啡豆] -->
+    <section class="section-padding beans-section" id="beans">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">FEATURED COFFEE BEANS</span>
+          <h2 class="section-title">精選莊園咖啡豆</h2>
+          <p class="section-subtitle">每季由杯測師產地親選，微批次精心烘焙，帶出豆子最純淨的自然風味。</p>
+        </div>
+
+        <!-- 烘焙度分類篩選器 -->
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">全部豆款</button>
+          <button class="filter-btn" data-filter="light">清新淺焙 (Light)</button>
+          <button class="filter-btn" data-filter="medium">平衡中焙 (Medium)</button>
+          <button class="filter-btn" data-filter="dark">醇厚深焙 (Dark)</button>
+        </div>
+
+        <!-- 咖啡豆卡片網格 -->
+        <div class="beans-grid" id="beansContainer">
+          <!-- 豆款 1 -->
+          <article class="bean-card" data-category="light">
+            <div class="bean-header">
+              <span class="roast-badge roast-light">淺焙 Light</span>
+              <div class="bean-rating">★ <span>4.9</span> (86)</div>
+            </div>
+            <h3 class="bean-name">耶加雪菲 罕貝拉 G1</h3>
+            <div class="bean-origin">衣索比亞・谷吉產區 ｜ 日曬慢乾處理</div>
+            <div class="bean-notes">
+              <span class="note-pill">茉莉花香</span>
+              <span class="note-pill">佛手柑</span>
+              <span class="note-pill">甜橙蜂蜜</span>
+            </div>
+            <div class="bean-footer">
+              <div class="bean-price">NT$ 450<span class="bean-spec"> / 200g</span></div>
+              <button class="btn-buy" onclick="orderBean('耶加雪菲 罕貝拉 G1')">加入選購</button>
+            </div>
+          </article>
+
+          <!-- 豆款 2 -->
+          <article class="bean-card" data-category="light">
+            <div class="bean-header">
+              <span class="roast-badge roast-light">淺焙 Light</span>
+              <div class="bean-rating">★ <span>4.8</span> (62)</div>
+            </div>
+            <h3 class="bean-name">肯亞 AA 水洗 特選</h3>
+            <div class="bean-origin">肯亞・祈安布產區 ｜ 雙重水洗工法</div>
+            <div class="bean-notes">
+              <span class="note-pill">黑醋栗</span>
+              <span class="note-pill">紅石榴</span>
+              <span class="note-pill">烏龍茶尾韻</span>
+            </div>
+            <div class="bean-footer">
+              <div class="bean-price">NT$ 480<span class="bean-spec"> / 200g</span></div>
+              <button class="btn-buy" onclick="orderBean('肯亞 AA 水洗 特選')">加入選購</button>
+            </div>
+          </article>
+
+          <!-- 豆款 3 -->
+          <article class="bean-card" data-category="medium">
+            <div class="bean-header">
+              <span class="roast-badge roast-medium">中焙 Medium</span>
+              <div class="bean-rating">★ <span>5.0</span> (115)</div>
+            </div>
+            <h3 class="bean-name">薇拉 聖荷西莊園 藝妓</h3>
+            <div class="bean-origin">哥倫比亞・慧蘭產區 ｜ 水洗低溫發酵</div>
+            <div class="bean-notes">
+              <span class="note-pill">黃金糖</span>
+              <span class="note-pill">榛果甜感</span>
+              <span class="note-pill">焦糖布丁</span>
+            </div>
+            <div class="bean-footer">
+              <div class="bean-price">NT$ 520<span class="bean-spec"> / 200g</span></div>
+              <button class="btn-buy" onclick="orderBean('薇拉 聖荷西莊園 藝妓')">加入選購</button>
+            </div>
+          </article>
+
+          <!-- 豆款 4 -->
+          <article class="bean-card" data-category="medium">
+            <div class="bean-header">
+              <span class="roast-badge roast-medium">中焙 Medium</span>
+              <div class="bean-rating">★ <span>4.9</span> (94)</div>
+            </div>
+            <h3 class="bean-name">音樂家系列 巴哈 蜜處理</h3>
+            <div class="bean-origin">哥斯大黎加・塔拉珠產區 ｜ 黃金蜜處理</div>
+            <div class="bean-notes">
+              <span class="note-pill">蜜餞果乾</span>
+              <span class="note-pill">紅葡萄</span>
+              <span class="note-pill">楓糖香氣</span>
+            </div>
+            <div class="bean-footer">
+              <div class="bean-price">NT$ 500<span class="bean-spec"> / 200g</span></div>
+              <button class="btn-buy" onclick="orderBean('音樂家系列 巴哈 蜜處理')">加入選購</button>
+            </div>
+          </article>
+
+          <!-- 豆款 5 -->
+          <article class="bean-card" data-category="dark">
+            <div class="bean-header">
+              <span class="roast-badge roast-dark">深焙 Dark</span>
+              <div class="bean-rating">★ <span>4.9</span> (142)</div>
+            </div>
+            <h3 class="bean-name">藍豆招牌 晴空綜合配方</h3>
+            <div class="bean-origin">藍豆自家招牌配方 ｜ 中深慢火烘焙</div>
+            <div class="bean-notes">
+              <span class="note-pill">黑巧克力</span>
+              <span class="note-pill">烤堅果</span>
+              <span class="note-pill">濃郁甘甜</span>
+            </div>
+            <div class="bean-footer">
+              <div class="bean-price">NT$ 380<span class="bean-spec"> / 227g</span></div>
+              <button class="btn-buy" onclick="orderBean('藍豆招牌 晴空綜合配方')">加入選購</button>
+            </div>
+          </article>
+
+          <!-- 豆款 6 -->
+          <article class="bean-card" data-category="dark">
+            <div class="bean-header">
+              <span class="roast-badge roast-dark">深焙 Dark</span>
+              <div class="bean-rating">★ <span>4.8</span> (78)</div>
+            </div>
+            <h3 class="bean-name">頂級曼特寧 G1 慢烘</h3>
+            <div class="bean-origin">印尼・蘇門答臘迦佑產區 ｜ 傳統濕剝法</div>
+            <div class="bean-notes">
+              <span class="note-pill">雪松木香</span>
+              <span class="note-pill">濃純可可</span>
+              <span class="note-pill">草本甘甜</span>
+            </div>
+            <div class="bean-footer">
+              <div class="bean-price">NT$ 420<span class="bean-spec"> / 200g</span></div>
+              <button class="btn-buy" onclick="orderBean('頂級曼特寧 G1 慢烘')">加入選購</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 現作飲品區 (Drinks Section) [功能二：介紹咖啡飲品] -->
+    <section class="section-padding drinks-section" id="drinks">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">FRESHLY BREWED DRINKS</span>
+          <h2 class="section-title">現作精品咖啡飲品</h2>
+          <p class="section-subtitle">以職人溫度現萃每一杯咖啡，給日常一段專屬的清新舒緩時光。</p>
+        </div>
+
+        <div class="drinks-grid">
+          <!-- 飲品 1 -->
+          <article class="drink-card">
+            <div class="drink-top">
+              <div class="drink-icon-box">☕</div>
+              <div>
+                <h3 class="drink-name">當季莊園手沖咖啡</h3>
+              </div>
+              <div class="drink-price">NT$ 160</div>
+            </div>
+            <p class="drink-desc">由咖啡師依所選豆款控溫萃取，保留花果香氣與乾淨酸質，口感細緻平衡。</p>
+            <div class="drink-tags">
+              <span class="drink-tag">冷熱皆宜</span>
+              <span class="drink-tag">可自選豆款</span>
+              <span class="drink-tag">招牌人氣</span>
+            </div>
+          </article>
+
+          <!-- 飲品 2 -->
+          <article class="drink-card">
+            <div class="drink-top">
+              <div class="drink-icon-box">🥛</div>
+              <div>
+                <h3 class="drink-name">藍豆純白燕麥拿鐵</h3>
+              </div>
+              <div class="drink-price">NT$ 170</div>
+            </div>
+            <p class="drink-desc">晴空深焙濃縮融入嚴選植物燕麥奶，醇厚麥香與堅果可可綿密交融。</p>
+            <div class="drink-tags">
+              <span class="drink-tag">冷熱皆宜</span>
+              <span class="drink-tag">純素可享</span>
+            </div>
+          </article>
+
+          <!-- 飲品 3 -->
+          <article class="drink-card">
+            <div class="drink-top">
+              <div class="drink-icon-box">🧊</div>
+              <div>
+                <h3 class="drink-name">冰釀慢萃 晴空冷萃</h3>
+              </div>
+              <div class="drink-price">NT$ 180</div>
+            </div>
+            <p class="drink-desc">18小時低溫冰滴緩慢凝萃，發酵出葡萄酒般的清甜果香，入口絲滑甘醇。</p>
+            <div class="drink-tags">
+              <span class="drink-tag">僅提供冰飲</span>
+              <span class="drink-tag">每日限量供應</span>
+            </div>
+          </article>
+
+          <!-- 飲品 4 -->
+          <article class="drink-card">
+            <div class="drink-top">
+              <div class="drink-icon-box">🍋</div>
+              <div>
+                <h3 class="drink-name">清檸氣泡黑咖啡 (西西里)</h3>
+              </div>
+              <div class="drink-price">NT$ 165</div>
+            </div>
+            <p class="drink-desc">鮮榨屏東綠檸檬汁與細緻氣泡水碰撞耶加雪菲濃縮，酸爽提神，解膩清心。</p>
+            <div class="drink-tags">
+              <span class="drink-tag">僅提供冰飲</span>
+              <span class="drink-tag">夏日清新首選</span>
+            </div>
+          </article>
+
+          <!-- 飲品 5 -->
+          <article class="drink-card">
+            <div class="drink-top">
+              <div class="drink-icon-box">✨</div>
+              <div>
+                <h3 class="drink-name">髒咖啡 Dirty Coffee</h3>
+              </div>
+              <div class="drink-price">NT$ 160</div>
+            </div>
+            <p class="drink-desc">急凍鮮乳上方緩緩注入熱濃縮，享受冰熱交織、先濃烈後滑順的層次樂趣。</p>
+            <div class="drink-tags">
+              <span class="drink-tag">冷飲專屬</span>
+              <span class="drink-tag">不加冰塊</span>
+            </div>
+          </article>
+
+          <!-- 飲品 6 -->
+          <article class="drink-card">
+            <div class="drink-top">
+              <div class="drink-icon-box">🍯</div>
+              <div>
+                <h3 class="drink-name">蜜香海鹽奶蓋咖啡</h3>
+              </div>
+              <div class="drink-price">NT$ 175</div>
+            </div>
+            <p class="drink-desc">現打綿密微鹹奶霜覆蓋在冰美式上，微鹹微甜感勾勒出更深邃的咖啡回甘。</p>
+            <div class="drink-tags">
+              <span class="drink-tag">冷飲限定</span>
+              <span class="drink-tag">下午茶首選</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 咖啡豆評價區 (Reviews Section) [功能三：咖啡豆評價] -->
+    <section class="section-padding reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">CUSTOMER REVIEWS</span>
+          <h2 class="section-title">咖啡愛好者真實評價</h2>
+          <p class="section-subtitle">來自每一位喜歡喝咖啡的真實分享，交流屬於手沖與品飲的純粹樂趣。</p>
+        </div>
+
+        <!-- 評分儀表板 -->
+        <div class="reviews-dashboard">
+          <div class="overall-rating">
+            <div class="score-big">4.9</div>
+            <div class="stars-amber">★★★★★</div>
+            <div class="rating-meta">基於 560+ 位咖啡人評價</div>
+          </div>
+
+          <div class="bars-container">
+            <div class="bar-row">
+              <span class="bar-label">5 星</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 92%;"></div></div>
+              <span class="bar-percent">92%</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">4 星</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 6%;"></div></div>
+              <span class="bar-percent">6%</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">3 星</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 2%;"></div></div>
+              <span class="bar-percent">2%</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">2 星</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 0%;"></div></div>
+              <span class="bar-percent">0%</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">1 星</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 0%;"></div></div>
+              <span class="bar-percent">0%</span>
+            </div>
+          </div>
+
+          <div class="review-action">
+            <button class="btn-write-review" id="btnOpenReview">
+              <span>✍ 發表心得評價</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 真實評價卡片列表 -->
+        <div class="reviews-list" id="reviewsContainer">
+          <!-- 評價 1 -->
+          <article class="review-card">
+            <div class="review-card-header">
+              <div class="reviewer-info">
+                <div class="reviewer-avatar">林</div>
+                <div>
+                  <div class="reviewer-name">林先生 (James Lin)</div>
+                  <div class="review-product-tag">品飲：耶加雪菲 罕貝拉 G1</div>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+            <p class="review-comment">「打開包裝豆子非常乾淨，完全沒有瑕疵豆！手沖注水的時候澎得超漂亮，花果香氣撲鼻而來。喝起來清爽、乾淨又很舒服，完全符合藍豆的清新風格！」</p>
+            <div class="review-meta-bar">
+              <span>沖煮參數：V60 / 92°C</span>
+              <button class="btn-helpful" onclick="likeReview(this)">👍 有幫助 (24)</button>
+            </div>
+          </article>
+
+          <!-- 評價 2 -->
+          <article class="review-card">
+            <div class="review-card-header">
+              <div class="reviewer-info">
+                <div class="reviewer-avatar">陳</div>
+                <div>
+                  <div class="reviewer-name">陳小姐 (Chloe C.)</div>
+                  <div class="review-product-tag">品飲：音樂家系列 巴哈</div>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+            <p class="review-comment">「這款蜜處理巴哈真的太驚豔了！淡淡的發酵葡萄甜香跟蜂蜜尾韻，降溫之後喝更甘甜順口。很適合放假下午慢沖一杯，整個房間都是舒服的果香。」</p>
+            <div class="review-meta-bar">
+              <span>沖煮參數：KONO / 90°C</span>
+              <button class="btn-helpful" onclick="likeReview(this)">👍 有幫助 (19)</button>
+            </div>
+          </article>
+
+          <!-- 評價 3 -->
+          <article class="review-card">
+            <div class="review-card-header">
+              <div class="reviewer-info">
+                <div class="reviewer-avatar">張</div>
+                <div>
+                  <div class="reviewer-name">張育豪 (Barista David)</div>
+                  <div class="review-product-tag">品飲：晴空綜合配方豆</div>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+            <p class="review-comment">「拿來做義式濃縮跟拿鐵非常無敵！黑巧克力跟烤堅果甜感很飽滿，完全不苦澀或有雜味。加燕麥奶也是一絕，已經回購第三次227g包裝了。」</p>
+            <div class="review-meta-bar">
+              <span>沖煮參數：義式 18g in / 36g out</span>
+              <button class="btn-helpful" onclick="likeReview(this)">👍 有幫助 (31)</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 門市與營業資訊區 (Store Info) -->
+    <section class="section-padding contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div class="contact-info">
+            <h2 class="contact-title">歡迎來藍豆喝一杯</h2>
+            <p style="color: var(--slate-600); font-size: 14px; margin-bottom: 24px; line-height: 1.7;">
+              店內提供當季單品手沖、現作義式咖啡與新鮮烘焙豆零售。無論想坐下來安靜閱讀，或跟咖啡師聊聊沖煮心得，藍豆隨時為你亮起溫暖晴空。
+            </p>
+            <ul class="contact-list">
+              <li class="contact-item">
+                <span class="contact-icon">📍</span>
+                <span><strong>門市地址：</strong>台北市大安區藍豆路88號（捷運站步行3分鐘）</span>
+              </li>
+              <li class="contact-item">
+                <span class="contact-icon">📞</span>
+                <span><strong>聯繫電話：</strong>(02) 2345-6789</span>
+              </li>
+              <li class="contact-item">
+                <span class="contact-icon">✉️</span>
+                <span><strong>客服信箱：</strong>service@bluebeancoffee.tw</span>
+              </li>
+              <li class="contact-item">
+                <span class="contact-icon">☕</span>
+                <span><strong>門市服務：</strong>內用品飲、外帶折扣、手沖體驗、咖啡豆零售研磨</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="hours-card">
+            <div class="hours-title">
+              <span>🕒 營業時間表</span>
+            </div>
+            <div class="hours-row">
+              <span>週一至週五 (Weekday)</span>
+              <strong>08:30 — 18:30</strong>
+            </div>
+            <div class="hours-row">
+              <span>週六至週日 (Weekend)</span>
+              <strong>09:30 — 19:30</strong>
+            </div>
+            <div class="hours-note">※ 每週二為固定烘豆日，門市照常營業，歡迎參觀新鮮烘焙。</div>
+            <button class="btn-nav-store" onclick="showToast('門市已收到您的導航需求！歡迎光臨藍豆咖啡！')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              <span>開啟 Google 地圖導航</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 頁尾 (Footer) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h2>藍豆咖啡</h2>
+          <span style="font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.15em; color: var(--sky);">BLUE BEAN COFFEE</span>
+          <p>一杯純粹好咖啡，讓日常隨藍豆放晴。為喜歡喝咖啡的人打造簡單、清新、舒服的日常咖啡提案。</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>快速導覽</h3>
+          <ul class="footer-links">
+            <li><a href="#brand">品牌理念</a></li>
+            <li><a href="#beans">精選咖啡豆</a></li>
+            <li><a href="#drinks">現作飲品</a></li>
+            <li><a href="#reviews">顧客真實評價</a></li>
+            <li><a href="#contact">門市與營業資訊</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>咖啡風味分類</h3>
+          <ul class="footer-links">
+            <li><a href="#beans">清新淺焙 (Light)</a></li>
+            <li><a href="#beans">平衡中焙 (Medium)</a></li>
+            <li><a href="#beans">醇厚深焙 (Dark)</a></li>
+            <li><a href="#beans">藍豆自家配方豆</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>服務與諮詢</h3>
+          <ul class="footer-links">
+            <li><a href="#contact">門市手沖體驗預約</a></li>
+            <li><a href="#contact">辦公室豆款長期供應</a></li>
+            <li><a href="#contact">咖啡豆保存與研磨建議</a></li>
+            <li><a href="#reviews">發表心得與杯測交流</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 藍豆咖啡 Blue Bean Coffee. 依據 WebSpec 網頁規格大綱建置.</div>
+        <div>品牌色系：經典藍與清新純白 ｜ 簡單・清新・舒服</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 評價互動彈窗 (Review Modal) -->
+  <div class="modal-backdrop" id="reviewModal" aria-hidden="true">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">✍ 發表您的咖啡心得評價</h3>
+        <button class="modal-close" id="btnCloseReview" aria-label="關閉視窗">&times;</button>
+      </div>
+      <form id="reviewForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label" for="authorName">您的稱呼 / 暱稱 *</label>
+            <input type="text" class="form-input" id="authorName" placeholder="例如：林咖啡、Sarah T." required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="beanSelect">品飲豆款 *</label>
+            <select class="form-select" id="beanSelect" required>
+              <option value="耶加雪菲 罕貝拉 G1">耶加雪菲 罕貝拉 G1 (淺焙)</option>
+              <option value="肯亞 AA 水洗 特選">肯亞 AA 水洗 特選 (淺焙)</option>
+              <option value="薇拉 聖荷西莊園 藝妓">薇拉 聖荷西莊園 藝妓 (中焙)</option>
+              <option value="音樂家系列 巴哈 蜜處理">音樂家系列 巴哈 蜜處理 (中焙)</option>
+              <option value="藍豆招牌 晴空綜合配方">藍豆招牌 晴空綜合配方 (深焙)</option>
+              <option value="頂級曼特寧 G1 慢烘">頂級曼特寧 G1 慢烘 (深焙)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">心得評分 *</label>
+            <div class="star-picker" id="starPicker">
+              <span class="star-item active" data-val="1">★</span>
+              <span class="star-item active" data-val="2">★</span>
+              <span class="star-item active" data-val="3">★</span>
+              <span class="star-item active" data-val="4">★</span>
+              <span class="star-item active" data-val="5">★</span>
+            </div>
+            <input type="hidden" id="ratingValue" value="5">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="brewMethod">沖煮方式 / 參數（選填）</label>
+            <input type="text" class="form-input" id="brewMethod" placeholder="例如：手沖 V60 / 92°C / 研磨度小富士 3.5">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="commentText">品飲感受與心得文字 *</label>
+            <textarea class="form-textarea" id="commentText" rows="4" placeholder="分享這支咖啡帶給你的花果香氣、酸甜感或舒服感受..." required></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" id="btnCancelReview">取消</button>
+          <button type="submit" class="btn-primary">確認發布評價</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 浮動通知提示 (Toast) -->
+  <div class="toast" id="toastMessage" role="status" aria-live="polite">
+    <span id="toastIcon">✓</span>
+    <span id="toastText">訊息提示</span>
+  </div>
+
+  <!-- JavaScript 互動邏輯 -->
+  <script>
+    // 1. 手機端選單切換
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (mobileToggle && navMenu) {
+      mobileToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('open');
+      });
+
+      // 點選連結後自動收合選單
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('open');
+        });
+      });
+    }
+
+    // 2. 咖啡豆分類即時篩選
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const beanCards = document.querySelectorAll('.bean-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        beanCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 3. Toast 訊息提示元件
+    let toastTimeout;
+    function showToast(message, icon = '✓') {
+      const toast = document.getElementById('toastMessage');
+      const toastText = document.getElementById('toastText');
+      const toastIcon = document.getElementById('toastIcon');
+
+      if (!toast) return;
+
+      toastText.textContent = message;
+      toastIcon.textContent = icon;
+      toast.classList.add('show');
+
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // 咖啡豆選購行為
+    function orderBean(name) {
+      showToast(`已將『${name}』加入品味清單！`);
+    }
+
+    // 4. 評價點讚遞增
+    function likeReview(btn) {
+      if (btn.classList.contains('active')) {
+        showToast('您已經為這則評價點過讚囉！', '👍');
+        return;
+      }
+      const match = btn.textContent.match(/\d+/);
+      const current = match ? parseInt(match[0], 10) : 0;
+      btn.textContent = `👍 有幫助 (${current + 1})`;
+      btn.classList.add('active');
+      showToast('感謝您的回饋反饋！', '👍');
+    }
+
+    // 5. 評價視窗互動
+    const reviewModal = document.getElementById('reviewModal');
+    const btnOpenReview = document.getElementById('btnOpenReview');
+    const btnCloseReview = document.getElementById('btnCloseReview');
+    const btnCancelReview = document.getElementById('btnCancelReview');
+    const reviewForm = document.getElementById('reviewForm');
+    const starPicker = document.getElementById('starPicker');
+    const ratingValue = document.getElementById('ratingValue');
+    const reviewsContainer = document.getElementById('reviewsContainer');
+
+    function openModal() {
+      reviewModal.classList.add('active');
+      reviewModal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal() {
+      reviewModal.classList.remove('active');
+      reviewModal.setAttribute('aria-hidden', 'true');
+    }
+
+    if (btnOpenReview) btnOpenReview.addEventListener('click', openModal);
+    if (btnCloseReview) btnCloseReview.addEventListener('click', closeModal);
+    if (btnCancelReview) btnCancelReview.addEventListener('click', closeModal);
+
+    if (reviewModal) {
+      reviewModal.addEventListener('click', (e) => {
+        if (e.target === reviewModal) closeModal();
+      });
+    }
+
+    // 星級評分點擊處理
+    if (starPicker) {
+      const stars = starPicker.querySelectorAll('.star-item');
+      stars.forEach(star => {
+        star.addEventListener('click', () => {
+          const val = parseInt(star.dataset.val, 10);
+          ratingValue.value = val;
+          stars.forEach((s, idx) => {
+            if (idx < val) {
+              s.classList.add('active');
+            } else {
+              s.classList.remove('active');
+            }
+          });
+        });
+      });
+    }
+
+    // XSS 防護處理
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    // 提交評價處理
+    if (reviewForm) {
+      reviewForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = escapeHtml(document.getElementById('authorName').value.trim());
+        const bean = escapeHtml(document.getElementById('beanSelect').value);
+        const rating = parseInt(ratingValue.value, 10) || 5;
+        const brew = escapeHtml(document.getElementById('brewMethod').value.trim());
+        const comment = escapeHtml(document.getElementById('commentText').value.trim());
+
+        const starsStr = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+        const avatarInitial = name.charAt(0).toUpperCase() || '豆';
+        const brewText = brew ? `沖煮參數：${brew}` : '品飲愛好者推薦';
+
+        const newCard = document.createElement('article');
+        newCard.className = 'review-card';
+        newCard.innerHTML = `
+          <div class="review-card-header">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">${avatarInitial}</div>
+              <div>
+                <div class="reviewer-name">${name}</div>
+                <div class="review-product-tag">品飲：${bean}</div>
+              </div>
+            </div>
+            <div class="review-stars">${starsStr}</div>
+          </div>
+          <p class="review-comment">「${comment}」</p>
+          <div class="review-meta-bar">
+            <span>${brewText}</span>
+            <button class="btn-helpful" onclick="likeReview(this)">👍 有幫助 (1)</button>
+          </div>
+        `;
+
+        if (reviewsContainer) {
+          reviewsContainer.prepend(newCard);
+        }
+
+        closeModal();
+        reviewForm.reset();
+        // 重設星星為 5
+        ratingValue.value = 5;
+        if (starPicker) {
+          starPicker.querySelectorAll('.star-item').forEach(s => s.classList.add('active'));
+        }
+
+        showToast('感謝您的用心評價！已成功刊登。');
+      });
+    }
+  </script>
+</body>
+</html>
